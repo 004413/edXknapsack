@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>
+      Knapsack Problem Demonstration
+    </title>
+    <script src="https:<--ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="knapsack.js"></script>
+    <link href="knapsack.css" type="text/css" rel="stylesheet"> </link>
+  </head>
+  <body>
+    <div class="knapsackScreen" data-maxweight="20"> <!-- the entire screen -->
+      <div class="alert">The knapsack'd be too big.</div> <!-- alert that pops up when knapsack size exceeded -->
+      <span class="column"> <!-- first column -->
+        <div class="place"> <!-- picture at top -->
+          <img src="house.png" height="40" width="120"/>
+        </div>
+        <div class="stuff" id="house"> <!-- box in middle -->
+          <div class="item">
+            <img src="clock.png" data-value="175" data-weight="10" data-name="clock" height="120" width="120">
+            <br/>
+            $175, 10kg
+          </div>
+          <div class="item">
+            <img src="painting.png" data-value="120" data-weight="9" data-name="painting" height="120" width="120">
+            <br/>
+            $120, 9kg
+          </div>
+          <div class="item">
+            <img src="radio.png" data-value="20" data-weight="4" data-name="radio" height="120" width="120">
+            <br/>
+            $20, 4kg
+          </div>
+          <div class="item">
+            <img src="vase.png" data-value="50" data-weight="2" data-name="vase" height="120" width="120">
+            <br/>
+            $50, 2kg
+          </div>
+          <div class="item">
+            <img src="book.png" data-value="10" data-weight="1" data-name="book" height="120" width="120">
+            <br/>
+            $10, 1kg
+          </div>
+          <div class="item">
+            <img src="computer.png" data-value="200" data-weight="20" data-name="computer" height="120" width="120">
+            <br/>
+            $200, 20kg
+          </div>
+        </div>
+        <div class="instructions"> <!-- instructions on bottom -->
+          Click an item to place in knapsack. 
+        </div>
+      </span>
+      <span class="column"> <!-- second column -->
+        <div class="place"> <!-- picture at top -->
+          <img src="burglar.png"/ height="40" width="40"/>
+        </div>
+        <div class="stuff" id="sack"> <!-- box in middle -->
+        </div>
+        <div class="instructions"> <!-- instructions on bottom -->
+          Click an item to remove from knapsack. 
+        </div>
+      </span>
+    </div>
+  </body>
+</html>
