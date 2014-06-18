@@ -1,5 +1,6 @@
+var alertTime = 200;
+
 $(document).ready(function(){ // movement function
-  $('.alert').hide();
   var value = 0;
   var mass = 0;
   var house = $('#house');
@@ -22,9 +23,7 @@ $(document).ready(function(){ // movement function
     }
   });
 /*  sackItems.on('click', function(event){ // when clicked while in sack, move to house
-    console.log("Also hi here.");
     var target = $(this);
-    console.log("Hi there.");
     house.append(target);
     sackItems.detach(target);
     sackItems = $('#sack .item');
@@ -35,7 +34,7 @@ $(document).ready(function(){ // movement function
 });
 
 function overmass(){
-  $('.alert').show(200)
-             .delay(200)
-             .hide(200);
+  $('.alert').show(alertTime)
+             .delay(alertTime)
+             .hide(alertTime);
 }
