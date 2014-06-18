@@ -1,4 +1,5 @@
 var alertTime = 200;
+var knapsackCapacity = 20;
 
 $(document).ready(function(){ // movement function
   var value = 0;
@@ -7,29 +8,29 @@ $(document).ready(function(){ // movement function
   var sack = $('#sack');
   var items = $('.item');
   items.mouseover(function(){
-    $(this).css('cursor','pointer');
+    $(this).css('cursor','pointer'); // makes cursor a pointer while over item
   });
   items.click(function(){
     if($(this).parent()
               .attr('id')=='house'){
       var newMass = mass + parseInt( $(this).children('img')
                                             .attr('data-weight'));
-      if(newMass>20){
+      if(newMass>knapsackCapacity){ // case of knapsack becoming too heavy
         overMass()
-      }else{
+      }else{ // add to knapsack
         sack.append( $(this) );
         mass = newMass
         value += parseInt($(this).children('img')
                                  .attr('data-value'));
-        $('#burglar').text("Value: $"+value+"; Mass: "+mass+" kg");
+        $('#burglar').text("Value: $"+value+"; Mass: "+mass+" kg"); // updates value and mass readings
       }
-    }else{
+    }else{ // remove from knapsack
       house.append( $(this) );
       mass -= parseInt($(this).children('img')
                               .attr('data-weight'));
       value -= parseInt($(this).children('img')
                                .attr('data-value'));
-      $('#burglar').text("Value: $"+value+"; Mass: "+mass+" kg");
+      $('#burglar').text("Value: $"+value+"; Mass: "+mass+" kg"); // updates value and mass readings
     }
   });
 /*  sackItems.on('click', function(event){ // when clicked while in sack, move to house
@@ -43,6 +44,7 @@ $(document).ready(function(){ // movement function
   });*/
 });
 
+// Below function executed when knapsackCapacity would be exceeded if item moved (inner if loop above)
 function overMass(){
   $('.alert').show(alertTime)
              .delay(3*alertTime)
