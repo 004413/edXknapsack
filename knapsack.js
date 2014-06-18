@@ -6,6 +6,9 @@ $(document).ready(function(){ // movement function
   var house = $('#house');
   var sack = $('#sack');
   var items = $('.item');
+  items.mouseover(function(){
+    $(this).css('cursor','pointer');
+  });
   items.click(function(){
     if($(this).parent()
               .attr('id')=='house'){
