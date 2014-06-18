@@ -9,17 +9,24 @@ $(document).ready(function(){ // movement function
   items.click(function(){
     if($(this).parent()
               .attr('id')=='house'){
-      sack.append( $(this) );
-      mass += parseInt($(this).children('img')
-                              .attr('data-weight'));
-      value += parseInt($(this).children('img')
-                               .attr('data-value'));
+      var newMass = mass + parseInt( $(this).children('img')
+                                            .attr('data-weight'));
+      if(newMass>20){
+        overMass()
+      }else{
+        sack.append( $(this) );
+        mass = newMass
+        value += parseInt($(this).children('img')
+                                 .attr('data-value'));
+        $('#burglar').text("Value: $"+value+"; Mass: "+mass+" kg");
+      }
     }else{
       house.append( $(this) );
       mass -= parseInt($(this).children('img')
                               .attr('data-weight'));
       value -= parseInt($(this).children('img')
                                .attr('data-value'));
+      $('#burglar').text("Value: $"+value+"; Mass: "+mass+" kg");
     }
   });
 /*  sackItems.on('click', function(event){ // when clicked while in sack, move to house
@@ -33,7 +40,7 @@ $(document).ready(function(){ // movement function
   });*/
 });
 
-function overmass(){
+function overMass(){
   $('.alert').show(alertTime)
              .delay(alertTime)
              .hide(alertTime);
