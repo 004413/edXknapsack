@@ -3,6 +3,9 @@
 
 .alert{
   display: none;
+  text-align: left;
+  font-size: 0.57in;
+  color: #ff0000;
 }
 
 .column{

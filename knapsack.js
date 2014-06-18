@@ -42,6 +42,6 @@ $(document).ready(function(){ // movement function
 
 function overMass(){
   $('.alert').show(alertTime)
-             .delay(alertTime)
+             .delay(3*alertTime)
              .hide(alertTime);
 }
