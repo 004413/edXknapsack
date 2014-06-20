@@ -6,15 +6,26 @@
       Knapsack Problem Demonstration
     </title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
     <script src="knapsack.js"></script>
     <link href="knapsack.css" type="text/css" rel="stylesheet"> </link>
   </head>
   <body>
     <div class="knapsackScreen" data-maxweight="20"> <!-- the entire screen -->
       <div class="alert">
-        That makes the knapsack too big!
+        That makes the knapsack too big.
+        <br/>
+        <b>It comes to life, eats you,
+        <br/>
+        gets food poisoning, sues
+        <br/>
+        you for it, and wins. You
+        <br/>
+        lose all the value you got.
+        <br/>
+        Also your life. Whoops. =/</b> <!-- tried to use text wrapping with setting a width attribute. It didn't work. -->
       </div> <!-- alert that pops up when knapsack size exceeded -->
-      <span class="column"> <!-- first column -->
+      <div class="column"> <!-- first column -->
         <div class="place"> <!-- picture at top -->
           <img src="house.png" height="40" width="120"/>
           <br/>
@@ -55,8 +66,8 @@
         <div class="instructions"> <!-- instructions on bottom -->
           Click an item to place in knapsack. 
         </div>
-      </span>
-      <span class="column"> <!-- second column -->
+      </div>
+      <div class="column"> <!-- second column -->
         <div class="place"> <!-- picture at top -->
           <img src="burglar.png" height="40" width="40"/>
           <div id="burglar"> <!-- to ID quantities to be updated -->
@@ -68,7 +79,11 @@
         <div class="instructions"> <!-- instructions on bottom -->
           Click an item to remove from knapsack. 
         </div>
-      </span>
+      </div>
+    </div>
+    <br/>
+    <div>
+      <button id="restart">Restart</button>
     </div>
   </body>
 </html>
