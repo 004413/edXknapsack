@@ -11,7 +11,7 @@
   display: none;
   text-align: left;
   font-size: 0.57in;
-  color: #ff0000;
+  color: #FF0000;
 }
 
 .column{
@@ -44,5 +44,5 @@
 
 .instructions{
   text-align: center;
-  color: #AAAAAA;
+  color: #888888;
 }
