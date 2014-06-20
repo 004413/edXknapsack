@@ -10,7 +10,7 @@
     <script src="knapsack.js"></script>
     <link href="knapsack.css" type="text/css" rel="stylesheet"> </link>
   </head>
-  <body>
+  <body id="canvas">
     <div class="knapsackScreen" data-maxweight="20"> <!-- the entire screen -->
       <div class="alert">
         That makes the knapsack too big.
@@ -27,7 +27,7 @@
       </div> <!-- alert that pops up when knapsack size exceeded -->
       <div class="column"> <!-- first column -->
         <div class="place"> <!-- picture at top -->
-          <img src="house.png" height="40" width="120"/>
+          <img src="house.png" height="80" width="240"/>
           <br/>
           Items not to scale.  
         </div>
@@ -64,12 +64,12 @@
           </div>
         </div>
         <div class="instructions"> <!-- instructions on bottom -->
-          Click an item to place in knapsack. 
+          Click an item in this column to place in knapsack. 
         </div>
       </div>
       <div class="column"> <!-- second column -->
         <div class="place"> <!-- picture at top -->
-          <img src="burglar.png" height="40" width="40"/>
+          <img src="burglar.png" height="80" width="80"/>
           <div id="burglar"> <!-- to ID quantities to be updated -->
             Value: $0; Mass: 0 kg
           </div>
@@ -77,7 +77,7 @@
         <div class="stuff" id="sack"> <!-- box in middle -->
         </div>
         <div class="instructions"> <!-- instructions on bottom -->
-          Click an item to remove from knapsack. 
+          Click an item in this column to remove from knapsack. 
         </div>
       </div>
     </div>

@@ -1,5 +1,7 @@
 var alertTime = 200;
 var knapsackCapacity = 20;
+var nomSound = new Audio("nom.wav");
+var bling = new Audio("money.wav");
 
 $(document).ready(function(){ // movement function
   var value = 0;
@@ -16,12 +18,13 @@ $(document).ready(function(){ // movement function
               .attr('id')=='house'){
       var newMass = mass + itemMass;
       if(newMass>knapsackCapacity){ // case of knapsack becoming too heavy
-        overMass()
+        overMass();
       }else{ // add to knapsack
         sack.append( $(this) );
         mass = newMass;
         value += itemValue;
         updateValueAndMass(value,mass);
+        bling.play();
       }
     }else{ // remove from knapsack
       house.append( $(this) );
@@ -49,10 +52,14 @@ $(document).ready(function(){ // movement function
 
 // Function executed when knapsackCapacity would be exceeded if item moved (inner if loop above)
 function overMass(){
+  console.log("Hi there.");
   $('.column').detach();
   $('#restart').detach();
   $('.alert').show(alertTime)
              .delay(3*alertTime);
+  for(var nom=0;nom<127;nom++){
+    nomSound.play();
+  }
 }
 
 // Updates quantitative displays below burglar
