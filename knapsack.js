@@ -54,15 +54,18 @@ $(document).ready(function(){ // movement function
 function overMass(){
   console.log("Hi there.");
   $('.column').detach();
-  $('#restart').detach();
+//  $('#restart').detach();
   $('.alert').show(alertTime)
              .delay(3*alertTime);
   for(var nom=0;nom<127;nom++){
     nomSound.play();
   }
+  $('#restart').click(function(){
+    location.reload();
+  });
 }
 
 // Updates quantitative displays below burglar
 function updateValueAndMass(value,mass){
-  $('#burglar').text("Value: $"+value+"; Mass: "+mass+"kg");
+  $('#burglar').text("Value: $"+value+" | Mass: "+mass+"kg");
 }
